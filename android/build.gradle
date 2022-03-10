@@ -29,9 +29,9 @@ subprojects {
     project.evaluationDependsOn(':app')
 }
 project.tasks["sonarqube"].dependsOn "anotherTask"
-build.gradle
 sonarqube {
     androidVariant 'fullDebug'
+    }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
