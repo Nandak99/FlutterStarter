@@ -13,6 +13,7 @@ buildscript {
 plugins {
   id "org.sonarqube" version "3.3"
 }
+
 allprojects {
     repositories {
         google()
@@ -27,6 +28,10 @@ subprojects {
 subprojects {
     project.evaluationDependsOn(':app')
 }
+project.tasks["sonarqube"].dependsOn "anotherTask"
+build.gradle
+sonarqube {
+    androidVariant 'fullDebug'
 
 task clean(type: Delete) {
     delete rootProject.buildDir
